@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Комплектующие</string>
+       </attribute>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>101</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Droid Sans</family>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Процессор</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::TextFormat::AutoText</enum>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="cash_fill">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>128</y>
+          <width>71</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Кэш:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="freq_text">
+        <property name="geometry">
+         <rect>
+          <x>13</x>
+          <y>153</y>
+          <width>63</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Частота:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="cash_text">
+        <property name="geometry">
+         <rect>
+          <x>13</x>
+          <y>128</y>
+          <width>35</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Кэш:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="model_text">
+        <property name="geometry">
+         <rect>
+          <x>13</x>
+          <y>53</y>
+          <width>62</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Модель:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="cores_fill">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>78</y>
+          <width>41</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ядер:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="freq_fill">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>153</y>
+          <width>101</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Частота:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="cores_text">
+        <property name="geometry">
+         <rect>
+          <x>13</x>
+          <y>78</y>
+          <width>41</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ядер:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="model_fill">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>53</y>
+          <width>400</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Модель:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="threads_fill">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>103</y>
+          <width>66</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Потоков:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="threads_text">
+        <property name="geometry">
+         <rect>
+          <x>13</x>
+          <y>103</y>
+          <width>66</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Потоков:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="temp_fill">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>178</y>
+          <width>141</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ТЕмпература:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="temp_text">
+        <property name="geometry">
+         <rect>
+          <x>13</x>
+          <y>178</y>
+          <width>102</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Температура:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="cores_text_2">
+        <property name="geometry">
+         <rect>
+          <x>33</x>
+          <y>295</y>
+          <width>41</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ядер:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="model_fill_2">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>270</y>
+          <width>400</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Модель:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>217</y>
+          <width>101</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Droid Sans</family>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Накопители</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::TextFormat::AutoText</enum>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="threads_fill_2">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>320</y>
+          <width>66</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Потоков:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="model_text_2">
+        <property name="geometry">
+         <rect>
+          <x>33</x>
+          <y>270</y>
+          <width>62</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Модель:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="cores_fill_2">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>295</y>
+          <width>41</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ядер:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="threads_text_2">
+        <property name="geometry">
+         <rect>
+          <x>33</x>
+          <y>320</y>
+          <width>66</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Потоков:</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Система</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

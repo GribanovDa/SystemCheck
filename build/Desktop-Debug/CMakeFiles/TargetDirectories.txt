@@ -1,0 +1,9 @@
+/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles/SystemCheck.dir
+/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles/install.dir
+/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles/SystemCheck_autogen_timestamp_deps.dir
+/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles/SystemCheck_autogen.dir

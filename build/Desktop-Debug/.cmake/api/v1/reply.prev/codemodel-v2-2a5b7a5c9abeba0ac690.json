@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-ee3eec7b56af04c61c5f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SystemCheck",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SystemCheck::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SystemCheck-Debug-d53da1febb65e597fea7.json",
+					"name" : "SystemCheck",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SystemCheck_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SystemCheck_autogen-Debug-50cd850308a16e493de1.json",
+					"name" : "SystemCheck_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SystemCheck_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SystemCheck_autogen_timestamp_deps-Debug-44041c6bdb31e71ab876.json",
+					"name" : "SystemCheck_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/mushroom/\u041f\u0440\u043e\u0435\u043a\u0442\u044b/C++/SystemCheck/build/Desktop-Debug",
+		"source" : "/home/mushroom/\u041f\u0440\u043e\u0435\u043a\u0442\u044b/C++/SystemCheck"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
