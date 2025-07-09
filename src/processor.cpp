@@ -1,91 +1,79 @@
 #include "/home/mushroom/Проекты/C++/SystemCheck/Include/processor.h"
-#include <string>
+
 #include <fstream>
+#include <stdexcept>
 #include <QMessageBox>
 
-
-Processor::Processor(){
-
+Processor::Processor() {
     try {
-        std::ifstream cpuinfo("/proc/cpuinfo");
-        cpuinfo.exceptions(std::ifstream::badbit); // Включаем генерацию исключений
-
-        std::string tempLine;
-        char *resultLine;
-
-        while (std::getline(cpuinfo, tempLine)) {
-            if (tempLine.find("model name") != std::string::npos) {
-                resultLine = &tempLine[13];
-                name = (resultLine);
-            }
-            else if (tempLine.find("cpu cores") != std::string::npos) {
-                resultLine = &tempLine[12];
-                cores = (resultLine);
-            }
-            else if (tempLine.find("cpu MHz") != std::string::npos) {
-                resultLine = &tempLine[11];
-                freq = (resultLine);
-            }
-            else if (tempLine.find("cache size") != std::string::npos) {
-                resultLine = &tempLine[13];
-                cash = (resultLine);
-            }
-            else if (tempLine.find("siblings") != std::string::npos) {
-                resultLine = &tempLine[11];
-                threads = (resultLine);
-            }
-
-        }
-        cpuinfo.close();
-    }
-    catch (const std::exception& e) {
-        // Показываем ошибку в диалоговом окне
-        QMessageBox::critical(nullptr,
-                              "Ошибка",
-                              QString("Не удалось обработать файл:\n%1\n\nПричина: %2 \n ")
-                                  .arg("/proc/cpuinfo")
-                                  .arg(e.what()));
+        loadCpuInfo();
+    } catch (const std::exception& e) {
+        QMessageBox::critical(nullptr, "Ошибка",
+                              QString("Не удалось загрузить информацию о процессоре:\n%1").arg(e.what()));
     }
 }
 
-QString Processor::getFreq() {
-
+void Processor::loadCpuInfo() {
     std::ifstream cpuinfo("/proc/cpuinfo");
-    if (!cpuinfo.is_open()) throw std::runtime_error("Failed to open file");
-
-    std::string tempLine, tempFreq;
-    char *resultLine;
-
-    while (std::getline(cpuinfo, tempLine)) {
-        if (tempLine.find("cpu MHz") != std::string::npos) {
-            resultLine = &tempLine[11];
-            tempFreq = (resultLine);
-            break;
-        }
+    if (!cpuinfo.is_open()) {
+        throw std::runtime_error("Не удалось открыть /proc/cpuinfo");
     }
-    QString tempFreqSnd = QString::fromStdString(tempFreq);
-    return tempFreqSnd;
+
+    std::string line;
+    while (std::getline(cpuinfo, line)) {
+        parseCpuInfoLine(line);
+    }
 }
 
+void Processor::parseCpuInfoLine(const std::string& line) {
+    const size_t colonPos = line.find(':');
+    if (colonPos == std::string::npos) return;
 
+    const std::string key = line.substr(0, colonPos);
+    const std::string value = line.substr(colonPos + 1);
 
-QString Processor::getTemperature() {
-
-    std::ifstream tempFile("/sys/class/hwmon/hwmon3/temp1_input");
-    if (!tempFile.is_open()) {
-        return "-1.0f";
+    if (key.find("model name") != std::string::npos) {
+        name = QString::fromStdString(value).trimmed();
     }
+    else if (key.find("cpu cores") != std::string::npos) {
+        cores = QString::fromStdString(value).trimmed();
+    }
+    else if (key.find("cpu MHz") != std::string::npos) {
+        freq = QString::fromStdString(value).trimmed();
+    }
+    else if (key.find("cache size") != std::string::npos) {
+        cache = QString::fromStdString(value).trimmed();
+    }
+    else if (key.find("siblings") != std::string::npos) {
+        threads = QString::fromStdString(value).trimmed();
+    }
+}
 
-    std::string tempStr;
-    std::getline(tempFile, tempStr);
-    tempFile.close();
+QString Processor::getFreq() const {
+    return freq.isEmpty() ? "N/A" : freq;
+}
 
+QString Processor::getTemperature() const {
     try {
-        float temp = std::stof(tempStr) / 1000.0f; // Переводим из миллиградусов
-        return QString::fromStdString(std::to_string(temp));
+        const QString tempStr = readFirstLineFromFile("/sys/class/hwmon/hwmon3/temp1_input");
+        bool ok;
+        const float temp = tempStr.toFloat(&ok) / 1000.0f;
+
+        return ok ? QString::number(temp, 'f', 1) + "°C" : "N/A";
     } catch (...) {
-        return "-1.0f";
+        return "N/A";
     }
+}
+
+QString Processor::readFirstLineFromFile(const std::string& path) const {
+    std::ifstream file(path);
+    if (!file.is_open()) {
+        throw std::runtime_error("Не удалось открыть файл: " + path);
+    }
+
+    std::string line;
+    std::getline(file, line);
+    return QString::fromStdString(line).trimmed();
 }
 
 
