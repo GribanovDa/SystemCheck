@@ -3,6 +3,8 @@
 #include <QGroupBox>
 #include <QFormLayout>
 #include <QScrollArea>
+#include <QPushButton>
+#include <QLabel>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -14,15 +16,21 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Создаем основной виджет и layout
+    // Creating content window and main layout
     QWidget *contentWidget = new QWidget();
     QVBoxLayout *mainLayout = new QVBoxLayout(contentWidget);
 
-    // Добавляем информацию о процессоре (как в предыдущем примере)
+    // Creating refresh nutton
+    QPushButton *refreshButton = new QPushButton("Обновить страницу");
+    refreshButton->setContentsMargins(10, 10, 0, 0); // Отступы от краев
+    mainLayout->addWidget(refreshButton);
+
+
+    // Information about processor
     QGroupBox *processorGroup = new QGroupBox("Информация о процессоре");
     processorGroup->setStyleSheet("QGroupBox {"
-                                  "   font: bold 12pt 'Arial';"  // Комбинированное задание шрифта
-                                  "   margin-top: 25px;"         // Отступ сверху
+                                  "   font: bold 12pt 'Arial';"  // Font
+                                  "   margin-top: 25px;"         // Indentation
                                   "}");
     QFormLayout *processorLayout = new QFormLayout();
 
@@ -39,11 +47,11 @@ MainWindow::MainWindow(QWidget *parent)
     processorGroup->setLayout(processorLayout);
     mainLayout->addWidget(processorGroup);
 
-    // Добавляем информацию о дисках
+    // Information about disks
     QGroupBox *disksGroup = new QGroupBox("Информация о дисках");
     disksGroup->setStyleSheet("QGroupBox {"
-                                "   font: bold 12pt 'Arial';"  // Комбинированное задание шрифта
-                                "   margin-top: 25px;"         // Отступ сверху
+                                "   font: bold 12pt 'Arial';"  // Font
+                                "   margin-top: 25px;"         // Indentation
                                 "}");
     QVBoxLayout *disksLayout = new QVBoxLayout();
 
@@ -63,18 +71,18 @@ MainWindow::MainWindow(QWidget *parent)
     disksGroup->setLayout(disksLayout);
     mainLayout->addWidget(disksGroup);
 
-    // Добавляем растягивающий элемент, чтобы прижать контент кверху
+    // Add a stretching element to push the content up
     mainLayout->addStretch();
 
     // Создаем QScrollArea и устанавливаем contentWidget в нее
     QScrollArea *scrollArea = new QScrollArea();
     scrollArea->setWidget(contentWidget);
-    scrollArea->setWidgetResizable(true); // Важно для корректного отображения
+    scrollArea->setWidgetResizable(true); // Important for correct display
 
-    // Устанавливаем scrollArea как центральный виджет
+    // Create a QScrollArea and set the contentWidget to it
     setCentralWidget(scrollArea);
 
-    // Настраиваем таймер для обновления информации
+    // Setting up a timer for updating information
     connect(timer, &QTimer::timeout, [this, freqLabel, tempLabel](){
         freqLabel->setText(proc->getFreq());
         tempLabel->setText(proc->getTemperature());

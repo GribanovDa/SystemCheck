@@ -362,6 +362,9 @@ CMakeFiles/SystemCheck.dir/mainwindow.cpp.o: \
  /usr/include/qt6/QtCore/qiodevice.h \
  /usr/include/qt6/QtGui/qtextdocument.h /usr/include/qt6/QtCore/qurl.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
+ /usr/include/qt6/QtWidgets/QPushButton \
+ /usr/include/qt6/QtWidgets/qpushbutton.h \
+ /usr/include/qt6/QtWidgets/qabstractbutton.h \
  /usr/include/qt6/QtWidgets/QScrollBar \
  /usr/include/qt6/QtWidgets/qscrollbar.h \
  /usr/include/qt6/QtWidgets/qabstractslider.h \
@@ -375,4 +378,5 @@ CMakeFiles/SystemCheck.dir/mainwindow.cpp.o: \
  /usr/include/qt6/QtWidgets/QLayout /usr/include/qt6/QtWidgets/qlayout.h \
  /usr/include/qt6/QtWidgets/QScrollArea \
  /usr/include/qt6/QtWidgets/qscrollarea.h \
- /usr/include/qt6/QtWidgets/qabstractscrollarea.h
+ /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
+ /usr/include/qt6/QtWidgets/QPushButton /usr/include/qt6/QtWidgets/QLabel

@@ -323,6 +323,19 @@
          <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>360</y>
+          <width>96</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab">
        <attribute name="title">

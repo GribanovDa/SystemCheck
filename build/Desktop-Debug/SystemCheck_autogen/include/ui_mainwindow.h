@@ -14,6 +14,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
@@ -48,6 +49,7 @@ public:
     QLabel *cores_fill_2;
     QLabel *threads_text_2;
     QScrollBar *verticalScrollBar;
+    QPushButton *pushButton;
     QWidget *tab;
 
     void setupUi(QMainWindow *MainWindow)
@@ -137,6 +139,9 @@ public:
         verticalScrollBar->setObjectName("verticalScrollBar");
         verticalScrollBar->setGeometry(QRect(760, 200, 16, 241));
         verticalScrollBar->setOrientation(Qt::Orientation::Vertical);
+        pushButton = new QPushButton(tab_2);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(360, 360, 96, 27));
         tabWidget->addTab(tab_2, QString());
         tab = new QWidget();
         tab->setObjectName("tab");
@@ -177,6 +182,7 @@ public:
         model_text_2->setText(QCoreApplication::translate("MainWindow", "\320\234\320\276\320\264\320\265\320\273\321\214:", nullptr));
         cores_fill_2->setText(QCoreApplication::translate("MainWindow", "\320\257\320\264\320\265\321\200:", nullptr));
         threads_text_2->setText(QCoreApplication::translate("MainWindow", "\320\237\320\276\321\202\320\276\320\272\320\276\320\262:", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "\320\232\320\276\320\274\320\277\320\273\320\265\320\272\321\202\321\203\321\216\321\211\320\270\320\265", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "\320\241\320\270\321\201\321\202\320\265\320\274\320\260", nullptr));
     } // retranslateUi
