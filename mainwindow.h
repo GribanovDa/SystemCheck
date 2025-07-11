@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include "/home/mushroom/Проекты/C++/SystemCheck/Include/processor.h"
+#include "/home/mushroom/Проекты/C++/SystemCheck/Include/harddisk.h"
 #include <QMainWindow>
 #include <QTimer>
 
@@ -21,6 +22,7 @@ public:
 
 private:
     Processor *proc;
+    HardDisk *disks;
     Ui::MainWindow *ui;
     QTimer *timer;
 };

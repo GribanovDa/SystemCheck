@@ -14,6 +14,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QScrollBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
 
@@ -46,6 +47,7 @@ public:
     QLabel *model_text_2;
     QLabel *cores_fill_2;
     QLabel *threads_text_2;
+    QScrollBar *verticalScrollBar;
     QWidget *tab;
 
     void setupUi(QMainWindow *MainWindow)
@@ -109,28 +111,32 @@ public:
         temp_text->setGeometry(QRect(13, 178, 102, 19));
         cores_text_2 = new QLabel(tab_2);
         cores_text_2->setObjectName("cores_text_2");
-        cores_text_2->setGeometry(QRect(33, 295, 41, 19));
+        cores_text_2->setGeometry(QRect(15, 275, 41, 19));
         model_fill_2 = new QLabel(tab_2);
         model_fill_2->setObjectName("model_fill_2");
-        model_fill_2->setGeometry(QRect(150, 270, 400, 19));
+        model_fill_2->setGeometry(QRect(130, 250, 400, 19));
         label_2 = new QLabel(tab_2);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(10, 217, 101, 19));
+        label_2->setGeometry(QRect(10, 225, 101, 19));
         label_2->setFont(font);
         label_2->setTextFormat(Qt::TextFormat::AutoText);
         label_2->setWordWrap(false);
         threads_fill_2 = new QLabel(tab_2);
         threads_fill_2->setObjectName("threads_fill_2");
-        threads_fill_2->setGeometry(QRect(150, 320, 66, 19));
+        threads_fill_2->setGeometry(QRect(130, 300, 66, 19));
         model_text_2 = new QLabel(tab_2);
         model_text_2->setObjectName("model_text_2");
-        model_text_2->setGeometry(QRect(33, 270, 62, 19));
+        model_text_2->setGeometry(QRect(15, 250, 62, 19));
         cores_fill_2 = new QLabel(tab_2);
         cores_fill_2->setObjectName("cores_fill_2");
-        cores_fill_2->setGeometry(QRect(150, 295, 41, 19));
+        cores_fill_2->setGeometry(QRect(130, 275, 41, 19));
         threads_text_2 = new QLabel(tab_2);
         threads_text_2->setObjectName("threads_text_2");
-        threads_text_2->setGeometry(QRect(33, 320, 66, 19));
+        threads_text_2->setGeometry(QRect(15, 300, 66, 19));
+        verticalScrollBar = new QScrollBar(tab_2);
+        verticalScrollBar->setObjectName("verticalScrollBar");
+        verticalScrollBar->setGeometry(QRect(760, 200, 16, 241));
+        verticalScrollBar->setOrientation(Qt::Orientation::Vertical);
         tabWidget->addTab(tab_2, QString());
         tab = new QWidget();
         tab->setObjectName("tab");
