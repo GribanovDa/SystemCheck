@@ -21,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout(contentWidget);
 
     // Creating refresh nutton
-    QPushButton *refreshButton = new QPushButton("Обновить страницу");
-    refreshButton->setContentsMargins(10, 10, 0, 0); // Отступы от краев
+    QPushButton *refreshButton = new QPushButton("Обновить страницу");                      //TODO refresh function
+    refreshButton->setContentsMargins(10, 10, 0, 0);
     mainLayout->addWidget(refreshButton);
 
 
