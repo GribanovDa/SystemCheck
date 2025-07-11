@@ -70,7 +70,7 @@ int HardDisk::getDiskVolumeGB(const QString& diskName) const {
         throw std::runtime_error("Неверный формат размера диска");
     }
 
-    // Размер в GB (512 байт * количество секторов / 1024^3)
+    // Size(GB) (512 bytes * sectors / 1024^3)
     return static_cast<int>((sectors * 512LL) / (1024LL * 1024LL * 1024LL));
 }
 

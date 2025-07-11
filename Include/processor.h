@@ -11,7 +11,6 @@ private:
     QString cores;
     QString threads;
 
-    // Вспомогательные методы
     void loadCpuInfo();
     void parseCpuInfoLine(const std::string& line);
     QString readFirstLineFromFile(const std::string& path) const;

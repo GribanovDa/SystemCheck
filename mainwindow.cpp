@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     , proc(new Processor())
     , timer(new QTimer(this))
     , disks(new HardDisk())
+    , ram(new RAM())
 {
     ui->setupUi(this);
 
@@ -62,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
 
         diskLayout->addRow("Модель:", new QLabel(disksInfo[i].name));
         diskLayout->addRow("Тип:", new QLabel(disksInfo[i].type));
-        diskLayout->addRow("Объем (ГБ):", new QLabel(QString::number(disksInfo[i].volumeGB)));
+        diskLayout->addRow("Объем:", new QLabel(QString::number(disksInfo[i].volumeGB) + " ГБ"));
 
         diskGroup->setLayout(diskLayout);
         disksLayout->addWidget(diskGroup);
@@ -70,6 +71,25 @@ MainWindow::MainWindow(QWidget *parent)
 
     disksGroup->setLayout(disksLayout);
     mainLayout->addWidget(disksGroup);
+
+    // Information about RAM
+    QGroupBox *RAMGroup = new QGroupBox("Оперативная память");
+    RAMGroup->setStyleSheet("QGroupBox {"
+                                  "   font: bold 12pt 'Arial';"  // Font
+                                  "   margin-top: 25px;"         // Indentation
+                                  "}");
+    QFormLayout *RAMLayout = new QFormLayout();
+
+    QLabel *MemFreeLabel = new QLabel(proc->getFreq());
+    QLabel *SwapFreeLabel = new QLabel(proc->getTemperature());
+
+    RAMLayout->addRow("Всего оперативной памяти:", new QLabel(ram->getMemTotal()));
+    RAMLayout->addRow("Свободно:", MemFreeLabel);
+    RAMLayout->addRow("Объем раздела swap:", new QLabel(ram->getSwapTotal()));
+    RAMLayout->addRow("Свободно от объема swap:", SwapFreeLabel);
+
+    RAMGroup->setLayout(RAMLayout);
+    mainLayout->addWidget(RAMGroup);
 
     // Add a stretching element to push the content up
     mainLayout->addStretch();
@@ -83,9 +103,11 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(scrollArea);
 
     // Setting up a timer for updating information
-    connect(timer, &QTimer::timeout, [this, freqLabel, tempLabel](){
+    connect(timer, &QTimer::timeout, [this, freqLabel, tempLabel, MemFreeLabel, SwapFreeLabel](){
         freqLabel->setText(proc->getFreq());
         tempLabel->setText(proc->getTemperature());
+        MemFreeLabel->setText(ram->getMemFree());
+        SwapFreeLabel->setText(ram->getSwapFree());
     });
     timer->start(1000);
 }
