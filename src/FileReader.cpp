@@ -10,8 +10,6 @@ FileReader::FileReader(const QVector<QString>& importedPaths) : paths(importedPa
         QMessageBox::critical(nullptr, "Ошибка",
                               QString("Не удалось открыть файл:\n%1").arg(e.what()));
     }
-
-
 }
 
 void FileReader::fileReaderInitialization(QVector<QString>& paths){
@@ -23,10 +21,8 @@ void FileReader::fileReaderInitialization(QVector<QString>& paths){
         }
 
         keyValueInit(path);
-
         parsedFiles.append(mapKeyValue);
         mapKeyValue.clear();
-
     }
 }
 
@@ -47,7 +43,6 @@ void FileReader::parseInfoFromFileToMap(const std::string& line) {
         mapKeyValue[trimmedLine] = trimmedLine;
         return;
     }
-
     QString key = QString::fromStdString(line.substr(0, colonPos)).trimmed();
     QString value = QString::fromStdString(line.substr(colonPos + 1)).trimmed();
 
@@ -65,11 +60,9 @@ QString FileReader::readFirstLineFromFile(const QString& path) const{
     if (!file.is_open()) {
         throw std::runtime_error("Не удалось открыть файл: " + path.toStdString());
     }
-
     std::string line;
     std::getline(file, line);
     return QString::fromStdString(line).trimmed();
-
 }
 
 QVector<QMap<QString, QString>> FileReader::getVectorOFParsedFiles() const{
