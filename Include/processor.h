@@ -16,7 +16,6 @@ private:
     QVector<QMap<QString, QString>> parsedFiles;
 
     void loadCpuInfo();
-    void parseCpuInfoLine(const std::string& line);
     QString readFirstLineFromFile(const std::string& path) const;
     void parseCpuInfoLineFrequency(const std::string& line);
 
