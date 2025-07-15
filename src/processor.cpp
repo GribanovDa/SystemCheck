@@ -32,42 +32,7 @@ void Processor::loadCpuInfo() {
             threads = currentMap.value("siblings");
         }
     }
-/*
-    std::ifstream cpuinfo("/proc/cpuinfo");
-    if (!cpuinfo.is_open()) {
-        throw std::runtime_error("Не удалось открыть /proc/cpuinfo");
-    }
-
-    std::string line;
-    while (std::getline(cpuinfo, line)) {
-        parseCpuInfoLine(line);
-    }*/
 }
-
-void Processor::parseCpuInfoLine(const std::string& line) {
-
-
-    /*
-    const size_t colonPos = line.find(':');
-    if (colonPos == std::string::npos) return;
-
-    const std::string key = line.substr(0, colonPos);
-    const std::string value = line.substr(colonPos + 1);
-
-    if (key.find("model name") != std::string::npos) {
-        name = QString::fromStdString(value).trimmed();
-    }
-    else if (key.find("cpu cores") != std::string::npos) {
-        cores = QString::fromStdString(value).trimmed();
-    }
-    else if (key.find("cache size") != std::string::npos) {
-        cache = QString::fromStdString(value).trimmed();
-    }
-    else if (key.find("siblings") != std::string::npos) {
-        threads = QString::fromStdString(value).trimmed();
-    }*/
-}
-
 
 QString Processor::getTemperature() const {
     try {
