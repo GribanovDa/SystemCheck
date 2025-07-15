@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/SystemCheck_autogen/mocs_compilation.cpp" "CMakeFiles/SystemCheck.dir/SystemCheck_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/SystemCheck_autogen/mocs_compilation.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/main.cpp" "CMakeFiles/SystemCheck.dir/main.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/main.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/mainwindow.cpp" "CMakeFiles/SystemCheck.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/mainwindow.cpp.o.d"
+  "/home/mushroom/Проекты/C++/SystemCheck/src/FileReader.cpp" "CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/src/battery.cpp" "CMakeFiles/SystemCheck.dir/src/battery.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/battery.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/src/grafics.cpp" "CMakeFiles/SystemCheck.dir/src/grafics.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/grafics.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/src/harddisk.cpp" "CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o.d"

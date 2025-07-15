@@ -5,6 +5,9 @@
 #include <QMessageBox>
 
 Processor::Processor() {
+    paths = {{"/proc/cpuinfo"}, {"/sys/class/hwmon/hwmon3/temp1_input"}};
+    fileReader = new FileReader(paths);
+    parsedFiles = fileReader->getVectorOFParsedFiles();
     try {
         loadCpuInfo();
     } catch (const std::exception& e) {
@@ -14,6 +17,22 @@ Processor::Processor() {
 }
 
 void Processor::loadCpuInfo() {
+
+    for (const QMap<QString, QString>& currentMap : parsedFiles) {
+        if (currentMap.contains("model name")) {
+            name = currentMap.value("model name");  // Берём значение из текущего элемента
+        }
+        if (currentMap.contains("cpu cores")) {
+            cores = currentMap.value("cpu cores");
+        }
+        if (currentMap.contains("cache size")) {
+            cache = currentMap.value("cache size");
+        }
+        if (currentMap.contains("siblings")) {
+            threads = currentMap.value("siblings");
+        }
+    }
+/*
     std::ifstream cpuinfo("/proc/cpuinfo");
     if (!cpuinfo.is_open()) {
         throw std::runtime_error("Не удалось открыть /proc/cpuinfo");
@@ -22,10 +41,13 @@ void Processor::loadCpuInfo() {
     std::string line;
     while (std::getline(cpuinfo, line)) {
         parseCpuInfoLine(line);
-    }
+    }*/
 }
 
 void Processor::parseCpuInfoLine(const std::string& line) {
+
+
+    /*
     const size_t colonPos = line.find(':');
     if (colonPos == std::string::npos) return;
 
@@ -38,20 +60,14 @@ void Processor::parseCpuInfoLine(const std::string& line) {
     else if (key.find("cpu cores") != std::string::npos) {
         cores = QString::fromStdString(value).trimmed();
     }
-    else if (key.find("cpu MHz") != std::string::npos) {
-        freq = QString::fromStdString(value).trimmed();
-    }
     else if (key.find("cache size") != std::string::npos) {
         cache = QString::fromStdString(value).trimmed();
     }
     else if (key.find("siblings") != std::string::npos) {
         threads = QString::fromStdString(value).trimmed();
-    }
+    }*/
 }
 
-QString Processor::getFreq() const {
-    return freq.isEmpty() ? "N/A" : freq;
-}
 
 QString Processor::getTemperature() const {
     try {
@@ -74,6 +90,33 @@ QString Processor::readFirstLineFromFile(const std::string& path) const {
     std::string line;
     std::getline(file, line);
     return QString::fromStdString(line).trimmed();
+}
+
+QString Processor::getFrequency() {
+    std::ifstream meminfo("/proc/cpuinfo");
+    std::string line;
+
+    try{
+        while (std::getline(meminfo, line)) {
+            parseCpuInfoLineFrequency(line);
+        }
+    } catch (const std::exception& e) {
+        QMessageBox::critical(nullptr, "Ошибка",
+                              QString("Не удалось загрузить информацию о свободной оперативной памяти:\n%1").arg(e.what()));
+    }
+    return frequency + " МГц";
+}
+
+void Processor::parseCpuInfoLineFrequency(const std::string& line){
+    const size_t colonPos = line.find(':');
+    if (colonPos == std::string::npos) return;
+
+    const std::string key = line.substr(0, colonPos);
+    const std::string value = line.substr(colonPos + 1);
+
+    if (key.find("cpu MHz") != std::string::npos) {
+        frequency = QString::fromStdString(value).trimmed();
+    }
 }
 
 

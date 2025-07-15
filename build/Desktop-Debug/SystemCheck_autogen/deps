@@ -1,5 +1,6 @@
 SystemCheck_autogen/timestamp: \
 	/home/mushroom/Проекты/C++/SystemCheck/CMakeLists.txt \
+	/home/mushroom/Проекты/C++/SystemCheck/Include/FileReader.h \
 	/home/mushroom/Проекты/C++/SystemCheck/Include/battery.h \
 	/home/mushroom/Проекты/C++/SystemCheck/Include/grafics.h \
 	/home/mushroom/Проекты/C++/SystemCheck/Include/harddisk.h \
@@ -15,6 +16,7 @@ SystemCheck_autogen/timestamp: \
 	/home/mushroom/Проекты/C++/SystemCheck/main.cpp \
 	/home/mushroom/Проекты/C++/SystemCheck/mainwindow.cpp \
 	/home/mushroom/Проекты/C++/SystemCheck/mainwindow.h \
+	/home/mushroom/Проекты/C++/SystemCheck/src/FileReader.cpp \
 	/home/mushroom/Проекты/C++/SystemCheck/src/battery.cpp \
 	/home/mushroom/Проекты/C++/SystemCheck/src/grafics.cpp \
 	/home/mushroom/Проекты/C++/SystemCheck/src/harddisk.cpp \
@@ -283,6 +285,7 @@ SystemCheck_autogen/timestamp: \
 	/usr/include/linux/types.h \
 	/usr/include/locale.h \
 	/usr/include/pthread.h \
+	/usr/include/qt6/QtCore/QMap \
 	/usr/include/qt6/QtCore/QString \
 	/usr/include/qt6/QtCore/QTimer \
 	/usr/include/qt6/QtCore/QVector \

@@ -13,39 +13,64 @@ RAM::RAM() {
 }
 
 void RAM::loadRAMInfo() {
-    std::ifstream cpuinfo("/proc/meminfo");
-    if (!cpuinfo.is_open()) {
+    std::ifstream meminfo("/proc/meminfo");
+    if (!meminfo.is_open()) {
         throw std::runtime_error("Не удалось открыть /proc/meminfo");
     }
 
     std::string line;
-    while (std::getline(cpuinfo, line)) {
-        parseRAMInfoLine(line);
+    while (std::getline(meminfo, line)) {
+        parseRAMInfoLineForTotalMemory(line);
+        parseRAMInfoLineForFreeMemory(line);
     }
 }
 
-void RAM::parseRAMInfoLine(const std::string& line) {
+void RAM::parseRAMInfoLineForTotalMemory(const std::string& line) {
     const size_t colonPos = line.find(':');
     if (colonPos == std::string::npos) return;
 
-    const std::string key = line.substr(0, colonPos);
-    const std::string value = line.substr(colonPos + 1);
+
+
+    std::string key = line.substr(0, colonPos);
+    std::string value = line.substr(colonPos + 1);
 
     if (key.find("MemTotal") != std::string::npos) {
-        memTotal = QString::fromStdString(stringFromKilobytesToGigabytes(stod(value))) + " ГБ";
+        memTotal = stringFromKilobytesToGigabytes(stod(value), 1) + " ГБ";
     }
-    else if (key.find("MemFree") != std::string::npos) {
-        memFree = QString::fromStdString(stringFromKilobytesToGigabytes(stod(value))) + " ГБ";
-    }
-    else if (key.find("cpu MHz") != std::string::npos) {
-        swapFree = QString::fromStdString(stringFromKilobytesToGigabytes(stod(value))) + " ГБ";
-    }
-    else if (key.find("cache size") != std::string::npos) {
-        swapTotal = QString::fromStdString(stringFromKilobytesToGigabytes(stod(value))) + " ГБ";
+    else if (key.find("SwapTotal") != std::string::npos) {
+        swapTotal = stringFromKilobytesToGigabytes(stod(value), 1) + " ГБ";
     }
 }
 
+void RAM::parseRAMInfoLineForFreeMemory(const std::string& line) {
+    const size_t colonPos = line.find(':');
+    if (colonPos == std::string::npos) return;
 
-std::string RAM::stringFromKilobytesToGigabytes(double kiloBytes){
-    return std::to_string(kiloBytes/1048576);
+    std::string key = line.substr(0, colonPos);
+    std::string value = line.substr(colonPos + 1);
+
+    if (key.find("MemAvailable") != std::string::npos) {
+        memFree = stringFromKilobytesToGigabytes(stod(value), 3) + " ГБ";
+    }
+    else if (key.find("SwapFree") != std::string::npos) {
+        swapFree = stringFromKilobytesToGigabytes(stod(value), 3) + " ГБ";
+    }
+}
+
+QString RAM::stringFromKilobytesToGigabytes(double kiloBytes, short numbersAfterDecimalPoint){
+    return QString::number(kiloBytes/1048576, 'f', numbersAfterDecimalPoint);
+}
+
+void RAM::refreshFreeMemory(){
+    std::ifstream meminfo("/proc/meminfo");
+    std::string line;
+
+    try{
+        while (std::getline(meminfo, line)) {
+            parseRAMInfoLineForFreeMemory(line);
+        }
+    } catch (const std::exception& e) {
+        QMessageBox::critical(nullptr, "Ошибка",
+                              QString("Не удалось загрузить информацию о свободной оперативной памяти:\n%1").arg(e.what()));
+    }
 }

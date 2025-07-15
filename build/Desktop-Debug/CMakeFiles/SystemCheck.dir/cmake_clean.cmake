@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SystemCheck.dir/main.cpp.o.d"
   "CMakeFiles/SystemCheck.dir/mainwindow.cpp.o"
   "CMakeFiles/SystemCheck.dir/mainwindow.cpp.o.d"
+  "CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o"
+  "CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o.d"
   "CMakeFiles/SystemCheck.dir/src/battery.cpp.o"
   "CMakeFiles/SystemCheck.dir/src/battery.cpp.o.d"
   "CMakeFiles/SystemCheck.dir/src/grafics.cpp.o"

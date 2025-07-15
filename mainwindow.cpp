@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 #include <QGroupBox>
 #include <QFormLayout>
+#include <QGridLayout>
 #include <QScrollArea>
 #include <QPushButton>
 #include <QLabel>
@@ -21,13 +22,13 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *contentWidget = new QWidget();
     QVBoxLayout *mainLayout = new QVBoxLayout(contentWidget);
 
-    // Creating refresh nutton
+    // Creating refresh button______________________________________________________________________________
     QPushButton *refreshButton = new QPushButton("Обновить страницу");                      //TODO refresh function
     refreshButton->setContentsMargins(10, 10, 0, 0);
     mainLayout->addWidget(refreshButton);
 
 
-    // Information about processor
+    // Information about processor__________________________________________________________________________
     QGroupBox *processorGroup = new QGroupBox("Информация о процессоре");
     processorGroup->setStyleSheet("QGroupBox {"
                                   "   font: bold 12pt 'Arial';"  // Font
@@ -40,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
     processorLayout->addRow("Потоки:", new QLabel(proc->getThreads()));
     processorLayout->addRow("Кэш:", new QLabel(proc->getCash()));
 
-    QLabel *freqLabel = new QLabel(proc->getFreq());
+    QLabel *freqLabel = new QLabel(proc->getFrequency());
     QLabel *tempLabel = new QLabel(proc->getTemperature());
     processorLayout->addRow("Частота:", freqLabel);
     processorLayout->addRow("Температура:", tempLabel);
@@ -48,7 +49,7 @@ MainWindow::MainWindow(QWidget *parent)
     processorGroup->setLayout(processorLayout);
     mainLayout->addWidget(processorGroup);
 
-    // Information about disks
+    // Information about disks_____________________________________________________________________________
     QGroupBox *disksGroup = new QGroupBox("Информация о дисках");
     disksGroup->setStyleSheet("QGroupBox {"
                                 "   font: bold 12pt 'Arial';"  // Font
@@ -72,39 +73,42 @@ MainWindow::MainWindow(QWidget *parent)
     disksGroup->setLayout(disksLayout);
     mainLayout->addWidget(disksGroup);
 
-    // Information about RAM
-    QGroupBox *RAMGroup = new QGroupBox("Оперативная память");
+    // Information about RAM_______________________________________________________________________________
+    QGroupBox *RAMGroup = new QGroupBox("Память и виртуальная подкачка");
     RAMGroup->setStyleSheet("QGroupBox {"
-                                  "   font: bold 12pt 'Arial';"  // Font
-                                  "   margin-top: 25px;"         // Indentation
-                                  "}");
-    QFormLayout *RAMLayout = new QFormLayout();
+                            "   font: bold 12pt 'Arial';"  // Font
+                            "   margin-top: 25px;"         // Indentation
+                            "}");
+    QGridLayout *RAMLayoutGrid = new QGridLayout();
 
-    QLabel *MemFreeLabel = new QLabel(proc->getFreq());
-    QLabel *SwapFreeLabel = new QLabel(proc->getTemperature());
+    QLabel *MemFreeLabel = new QLabel(ram->getMemFree());
+    QLabel *SwapFreeLabel = new QLabel(ram->getSwapFree());
 
-    RAMLayout->addRow("Всего оперативной памяти:", new QLabel(ram->getMemTotal()));
-    RAMLayout->addRow("Свободно:", MemFreeLabel);
-    RAMLayout->addRow("Объем раздела swap:", new QLabel(ram->getSwapTotal()));
-    RAMLayout->addRow("Свободно от объема swap:", SwapFreeLabel);
+    RAMLayoutGrid->addWidget(new QLabel("Всего оперативной памяти:"), 0, 0);
+    RAMLayoutGrid->addWidget(new QLabel(ram->getMemTotal()), 0, 1);
+    RAMLayoutGrid->addWidget(new QLabel("Свободно:"), 1, 0);
+    RAMLayoutGrid->addWidget(MemFreeLabel, 1, 1);
+    RAMLayoutGrid->addWidget(new QLabel("Объем раздела swap:"), 0, 2);
+    RAMLayoutGrid->addWidget(new QLabel(ram->getSwapTotal()), 0, 3);
+    RAMLayoutGrid->addWidget(new QLabel("Свободно от объема swap:"), 1, 2);
+    RAMLayoutGrid->addWidget(SwapFreeLabel, 1, 3);
 
-    RAMGroup->setLayout(RAMLayout);
+    RAMGroup->setLayout(RAMLayoutGrid);
     mainLayout->addWidget(RAMGroup);
 
-    // Add a stretching element to push the content up
+    // Add a stretching element to push the content up_____________________________________________________
     mainLayout->addStretch();
 
-    // Создаем QScrollArea и устанавливаем contentWidget в нее
     QScrollArea *scrollArea = new QScrollArea();
     scrollArea->setWidget(contentWidget);
     scrollArea->setWidgetResizable(true); // Important for correct display
 
-    // Create a QScrollArea and set the contentWidget to it
     setCentralWidget(scrollArea);
 
-    // Setting up a timer for updating information
+    // Setting up a timer for updating information_________________________________________________________
     connect(timer, &QTimer::timeout, [this, freqLabel, tempLabel, MemFreeLabel, SwapFreeLabel](){
-        freqLabel->setText(proc->getFreq());
+        ram->refreshFreeMemory();
+        freqLabel->setText(proc->getFrequency());
         tempLabel->setText(proc->getTemperature());
         MemFreeLabel->setText(ram->getMemFree());
         SwapFreeLabel->setText(ram->getSwapFree());

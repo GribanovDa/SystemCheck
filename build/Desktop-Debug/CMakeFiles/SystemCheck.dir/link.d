@@ -13,6 +13,7 @@ SystemCheck: \
   CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o \
   CMakeFiles/SystemCheck.dir/src/operSys.cpp.o \
   CMakeFiles/SystemCheck.dir/src/screen.cpp.o \
+  CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o \
   /usr/lib64/libQt6Widgets.so.6.9.1 \
   /usr/lib64/libQt6Gui.so.6.9.1 \
   /usr/lib64/libGLX.so \
@@ -106,6 +107,8 @@ CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o:
 CMakeFiles/SystemCheck.dir/src/operSys.cpp.o:
 
 CMakeFiles/SystemCheck.dir/src/screen.cpp.o:
+
+CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o:
 
 /usr/lib64/libQt6Widgets.so.6.9.1:
 

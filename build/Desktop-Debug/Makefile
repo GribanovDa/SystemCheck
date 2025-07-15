@@ -272,6 +272,30 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+src/FileReader.o: src/FileReader.cpp.o
+.PHONY : src/FileReader.o
+
+# target to build an object file
+src/FileReader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o
+.PHONY : src/FileReader.cpp.o
+
+src/FileReader.i: src/FileReader.cpp.i
+.PHONY : src/FileReader.i
+
+# target to preprocess a source file
+src/FileReader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/FileReader.cpp.i
+.PHONY : src/FileReader.cpp.i
+
+src/FileReader.s: src/FileReader.cpp.s
+.PHONY : src/FileReader.s
+
+# target to generate assembly for a file
+src/FileReader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/FileReader.cpp.s
+.PHONY : src/FileReader.cpp.s
+
 src/battery.o: src/battery.cpp.o
 .PHONY : src/battery.o
 
@@ -488,6 +512,9 @@ help:
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... src/FileReader.o"
+	@echo "... src/FileReader.i"
+	@echo "... src/FileReader.s"
 	@echo "... src/battery.o"
 	@echo "... src/battery.i"
 	@echo "... src/battery.s"

@@ -40,6 +40,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         src/operSys.cpp
         src/screen.cpp
         mainwindow.h mainwindow.cpp mainwindow.ui
+        Include/FileReader.h
+        src/FileReader.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SystemCheck APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
