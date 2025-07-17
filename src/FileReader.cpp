@@ -4,6 +4,13 @@
 #include <QMessageBox>
 
 FileReader::FileReader(const QVector<QString>& importedPaths) : paths(importedPaths) {
+    refreshInfo();
+}
+
+void FileReader::refreshInfo(){
+    mapKeyValue.clear();
+    parsedFiles.clear();
+
     try{
         fileReaderInitialization(paths);
     } catch (const std::exception& e) {
@@ -14,6 +21,7 @@ FileReader::FileReader(const QVector<QString>& importedPaths) : paths(importedPa
 
 void FileReader::fileReaderInitialization(QVector<QString>& paths){
 
+
     for(int i = 0; i < paths.length(); ++i){
         std::ifstream path(paths[i].toStdString());
         if (!path.is_open()) {
@@ -23,6 +31,8 @@ void FileReader::fileReaderInitialization(QVector<QString>& paths){
         keyValueInit(path);
         parsedFiles.append(mapKeyValue);
         mapKeyValue.clear();
+
+        path.close();
     }
 }
 
@@ -37,7 +47,12 @@ void FileReader::keyValueInit(std::ifstream& path){
 }
 
 void FileReader::parseInfoFromFileToMap(const std::string& line) {
-    const size_t colonPos = line.find(':');
+    size_t colonPos = line.find(':');
+
+    if(colonPos == std::string::npos){
+        colonPos = line.find('=');
+    }
+
     if (colonPos == std::string::npos) {
         QString trimmedLine = QString::fromStdString(line).trimmed();
         mapKeyValue[trimmedLine] = trimmedLine;
@@ -46,14 +61,8 @@ void FileReader::parseInfoFromFileToMap(const std::string& line) {
     QString key = QString::fromStdString(line.substr(0, colonPos)).trimmed();
     QString value = QString::fromStdString(line.substr(colonPos + 1)).trimmed();
 
-    if (mapKeyValue.contains(key)) {
-        qWarning() << "Дубликат ключа:" << key;
-    }
     mapKeyValue[key] = value;
 }
-
-
-
 
 QString FileReader::readFirstLineFromFile(const QString& path) const{
     std::ifstream file(path.toStdString());
@@ -65,6 +74,7 @@ QString FileReader::readFirstLineFromFile(const QString& path) const{
     return QString::fromStdString(line).trimmed();
 }
 
-QVector<QMap<QString, QString>> FileReader::getVectorOFParsedFiles() const{
+QVector<QMap<QString, QString>> FileReader::getRefreshedVectorOfParsedFiles() {
+    refreshInfo();
     return parsedFiles;
 }

@@ -3,6 +3,7 @@
   /home/mushroom/Проекты/C++/SystemCheck/Include/FileReader.h \
   /home/mushroom/Проекты/C++/SystemCheck/Include/harddisk.h \
   /home/mushroom/Проекты/C++/SystemCheck/Include/mem.h \
+  /home/mushroom/Проекты/C++/SystemCheck/Include/operSys.h \
   /home/mushroom/Проекты/C++/SystemCheck/Include/processor.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \

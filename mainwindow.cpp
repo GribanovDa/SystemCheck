@@ -15,8 +15,11 @@ MainWindow::MainWindow(QWidget *parent)
     , timer(new QTimer(this))
     , disks(new HardDisk())
     , ram(new RAM())
+    , os(new OS())
 {
     ui->setupUi(this);
+    this->resize(900, 800);
+
 
     // Creating content window and main layout
     QWidget *contentWidget = new QWidget();
@@ -29,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     // Information about processor__________________________________________________________________________
-    QGroupBox *processorGroup = new QGroupBox("Информация о процессоре");
+    QGroupBox *processorGroup = new QGroupBox("Процессор");
     processorGroup->setStyleSheet("QGroupBox {"
                                   "   font: bold 12pt 'Arial';"  // Font
                                   "   margin-top: 25px;"         // Indentation
@@ -50,7 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
     mainLayout->addWidget(processorGroup);
 
     // Information about disks_____________________________________________________________________________
-    QGroupBox *disksGroup = new QGroupBox("Информация о дисках");
+    QGroupBox *disksGroup = new QGroupBox("Съемные накопители");
     disksGroup->setStyleSheet("QGroupBox {"
                                 "   font: bold 12pt 'Arial';"  // Font
                                 "   margin-top: 25px;"         // Indentation
@@ -96,6 +99,36 @@ MainWindow::MainWindow(QWidget *parent)
     RAMGroup->setLayout(RAMLayoutGrid);
     mainLayout->addWidget(RAMGroup);
 
+    // Information about OS_______________________________________________________________________________
+    QGroupBox *OSGroup = new QGroupBox("Операционная система");
+    OSGroup->setStyleSheet("QGroupBox {"
+                            "   font: bold 12pt 'Arial';"  // Font
+                            "   margin-top: 25px;"         // Indentation
+                            "}");
+    QGridLayout *OSLayoutGrid = new QGridLayout();
+
+    QLabel *sessionTime = new QLabel(os->getSessionTime());
+
+    OSLayoutGrid->addWidget(new QLabel("Операционная система:"), 0, 0);
+    OSLayoutGrid->addWidget(new QLabel(os->getSystemName()), 0, 1);
+    OSLayoutGrid->addWidget(new QLabel("Компьютер:"), 1, 0);
+    OSLayoutGrid->addWidget(new QLabel(os->getComuterName()), 1, 1);
+    OSLayoutGrid->addWidget(new QLabel("Имя пользователя:"), 2, 0);
+    OSLayoutGrid->addWidget(new QLabel(os->getUserName()), 2, 1);
+    OSLayoutGrid->addWidget(new QLabel("Время текущей сессии:"), 3, 0);
+    OSLayoutGrid->addWidget(sessionTime, 3, 1);
+    OSLayoutGrid->addWidget(new QLabel("Сайт ОС:"), 0, 2);
+    OSLayoutGrid->addWidget(new QLabel(os->getHomeURL()), 0, 3);
+    OSLayoutGrid->addWidget(new QLabel("Версия ядра:"), 1, 2);
+    OSLayoutGrid->addWidget(new QLabel(os->getKernelVersion()), 1, 3);
+    OSLayoutGrid->addWidget(new QLabel("Среда рабочего стола:"), 2, 2);
+    OSLayoutGrid->addWidget(new QLabel(os->getDesktopEnvironment()), 2, 3);
+
+
+
+    OSGroup->setLayout(OSLayoutGrid);
+    mainLayout->addWidget(OSGroup);
+
     // Add a stretching element to push the content up_____________________________________________________
     mainLayout->addStretch();
 
@@ -106,12 +139,12 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(scrollArea);
 
     // Setting up a timer for updating information_________________________________________________________
-    connect(timer, &QTimer::timeout, [this, freqLabel, tempLabel, MemFreeLabel, SwapFreeLabel](){
-        ram->refreshFreeMemory();
+    connect(timer, &QTimer::timeout, [this, freqLabel, tempLabel, MemFreeLabel, SwapFreeLabel, sessionTime](){
         freqLabel->setText(proc->getFrequency());
         tempLabel->setText(proc->getTemperature());
         MemFreeLabel->setText(ram->getMemFree());
         SwapFreeLabel->setText(ram->getSwapFree());
+        sessionTime->setText(os->getSessionTime());
     });
     timer->start(1000);
 }

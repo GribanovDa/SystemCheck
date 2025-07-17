@@ -4,6 +4,7 @@
 #include "/home/mushroom/Проекты/C++/SystemCheck/Include/processor.h"
 #include "/home/mushroom/Проекты/C++/SystemCheck/Include/harddisk.h"
 #include "/home/mushroom/Проекты/C++/SystemCheck/Include/mem.h"
+#include "/home/mushroom/Проекты/C++/SystemCheck/Include/operSys.h"
 #include <QMainWindow>
 #include <QTimer>
 
@@ -25,6 +26,7 @@ private:
     Processor *proc;
     HardDisk *disks;
     RAM *ram;
+    OS *os;
     Ui::MainWindow *ui;
     QTimer *timer;
 };

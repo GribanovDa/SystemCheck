@@ -1,7 +1,7 @@
 #ifndef MEM_H
 #define MEM_H
 #include <QString>
-#include <string>
+#include "/home/mushroom/Проекты/C++/SystemCheck/Include/FileReader.h"
 
 class RAM{
 
@@ -10,21 +10,23 @@ private:
     QString memFree;
     QString swapTotal;
     QString swapFree;
+    QVector<QString> path;
+    FileReader *fileReader;
+    QVector<QMap<QString, QString>> parsedFile;
 
 
     void loadRAMInfo();
-    void parseRAMInfoLineForTotalMemory(const std::string& line);
-    void parseRAMInfoLineForFreeMemory(const std::string& line);
-    QString stringFromKilobytesToGigabytes(double kiloBytes, short numbersAfterDecimalPoint);
+    void takeInfoAboutTotalMemory();
+    void takeInfoAboutFreeMemory();
+    QString stringFromKilobytesToGigabytes(double kiloBytes, short numbersAfterDecimalPoint) const;
 
 public:
     RAM();
 
     QString getMemTotal() const {return memTotal;};
-    QString getMemFree() const {return memFree;};
+    QString getMemFree();
     QString getSwapTotal() const {return swapTotal;};
-    QString getSwapFree() const {return swapFree;};
-    void refreshFreeMemory();
+    QString getSwapFree();
 
 };
 

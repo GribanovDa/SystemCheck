@@ -27,7 +27,7 @@ public:
     QString getCash() const { return cache;}
     QString getCores() const { return cores;}
     QString getThreads() const { return threads;}
-    QString getTemperature() const;
+    QString getTemperature();
     QString getFrequency();
 };
 

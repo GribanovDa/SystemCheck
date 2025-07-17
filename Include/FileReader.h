@@ -21,7 +21,8 @@ public:
     FileReader(const QVector<QString>& importedPaths);
     QString readFirstLineFromFile(const QString& path) const;
     void parseInfoFromFileToMap(const std::string& line);
-    QVector<QMap<QString, QString>> getVectorOFParsedFiles() const;
+    QVector<QMap<QString, QString>> getRefreshedVectorOfParsedFiles();
+    void refreshInfo();
 
 };
 
