@@ -1,6 +1,7 @@
 /home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/SystemCheck_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/mushroom/Проекты/C++/SystemCheck/mainwindow.h \
   /home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/SystemCheck_autogen/moc_predefs.h \
   /home/mushroom/Проекты/C++/SystemCheck/Include/FileReader.h \
+  /home/mushroom/Проекты/C++/SystemCheck/Include/grafics.h \
   /home/mushroom/Проекты/C++/SystemCheck/Include/harddisk.h \
   /home/mushroom/Проекты/C++/SystemCheck/Include/mem.h \
   /home/mushroom/Проекты/C++/SystemCheck/Include/operSys.h \

@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     , disks(new HardDisk())
     , ram(new RAM())
     , os(new OS())
+    , grafics(new Grafics)
 {
     ui->setupUi(this);
     this->resize(900, 800);
@@ -51,6 +52,35 @@ MainWindow::MainWindow(QWidget *parent)
 
     processorGroup->setLayout(processorLayout);
     mainLayout->addWidget(processorGroup);
+
+    // Information about grafics__________________________________________________________________________
+    QGroupBox *graficsGroup = new QGroupBox("Видеоадаптеры");
+    graficsGroup->setStyleSheet("QGroupBox {"
+                                  "   font: bold 12pt 'Arial';"  // Font
+                                  "   margin-top: 25px;"         // Indentation
+                                  "}");
+    QFormLayout *graficsLayout = new QFormLayout();
+
+    const QVector<GpuInfo> gpuInfo = grafics->getGraficsInfo();
+    QVector<QLabel*> tempLabels;
+
+    for(int i = 0; i < gpuInfo.size(); i++) {
+        QGroupBox *cardGroup = new QGroupBox(QString("Видеоадаптер %1").arg(i+1));
+        QFormLayout *cardLayout = new QFormLayout();
+
+        cardLayout->addRow("Производитель:", new QLabel(gpuInfo[i].vendor));
+        cardLayout->addRow("Модель:", new QLabel(gpuInfo[i].model));
+        cardLayout->addRow("Драйвер:", new QLabel(gpuInfo[i].driver));
+
+        QLabel *tempLabel = new QLabel("loading");
+        tempLabels.append(tempLabel);
+        cardLayout->addRow("Температура:", tempLabel);
+
+        cardGroup->setLayout(cardLayout);
+        graficsLayout->addWidget(cardGroup);
+    }
+    graficsGroup->setLayout(graficsLayout);
+    mainLayout->addWidget(graficsGroup);
 
     // Information about disks_____________________________________________________________________________
     QGroupBox *disksGroup = new QGroupBox("Съемные накопители");
@@ -139,12 +169,17 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(scrollArea);
 
     // Setting up a timer for updating information_________________________________________________________
-    connect(timer, &QTimer::timeout, [this, freqLabel, tempLabel, MemFreeLabel, SwapFreeLabel, sessionTime](){
+    connect(timer, &QTimer::timeout, [this, freqLabel, tempLabel, MemFreeLabel, SwapFreeLabel, sessionTime, tempLabels](){
         freqLabel->setText(proc->getFrequency());
         tempLabel->setText(proc->getTemperature());
         MemFreeLabel->setText(ram->getMemFree());
         SwapFreeLabel->setText(ram->getSwapFree());
         sessionTime->setText(os->getSessionTime());
+        for (int i = 0; i < tempLabels.size(); i++) {
+            tempLabels[i]->setText(grafics->getTemperature(i));
+        }
+
+
     });
     timer->start(1000);
 }
@@ -155,5 +190,7 @@ MainWindow::~MainWindow()
     delete ui;
     delete timer;
     delete disks;
+    delete os;
+    delete grafics;
 }
 

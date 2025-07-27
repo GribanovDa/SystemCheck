@@ -296,30 +296,6 @@ src/FileReader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/FileReader.cpp.s
 .PHONY : src/FileReader.cpp.s
 
-src/battery.o: src/battery.cpp.o
-.PHONY : src/battery.o
-
-# target to build an object file
-src/battery.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/battery.cpp.o
-.PHONY : src/battery.cpp.o
-
-src/battery.i: src/battery.cpp.i
-.PHONY : src/battery.i
-
-# target to preprocess a source file
-src/battery.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/battery.cpp.i
-.PHONY : src/battery.cpp.i
-
-src/battery.s: src/battery.cpp.s
-.PHONY : src/battery.s
-
-# target to generate assembly for a file
-src/battery.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/battery.cpp.s
-.PHONY : src/battery.cpp.s
-
 src/grafics.o: src/grafics.cpp.o
 .PHONY : src/grafics.o
 
@@ -464,30 +440,6 @@ src/processor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/processor.cpp.s
 .PHONY : src/processor.cpp.s
 
-src/screen.o: src/screen.cpp.o
-.PHONY : src/screen.o
-
-# target to build an object file
-src/screen.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/screen.cpp.o
-.PHONY : src/screen.cpp.o
-
-src/screen.i: src/screen.cpp.i
-.PHONY : src/screen.i
-
-# target to preprocess a source file
-src/screen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/screen.cpp.i
-.PHONY : src/screen.cpp.i
-
-src/screen.s: src/screen.cpp.s
-.PHONY : src/screen.s
-
-# target to generate assembly for a file
-src/screen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemCheck.dir/build.make CMakeFiles/SystemCheck.dir/src/screen.cpp.s
-.PHONY : src/screen.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -515,9 +467,6 @@ help:
 	@echo "... src/FileReader.o"
 	@echo "... src/FileReader.i"
 	@echo "... src/FileReader.s"
-	@echo "... src/battery.o"
-	@echo "... src/battery.i"
-	@echo "... src/battery.s"
 	@echo "... src/grafics.o"
 	@echo "... src/grafics.i"
 	@echo "... src/grafics.s"
@@ -536,9 +485,6 @@ help:
 	@echo "... src/processor.o"
 	@echo "... src/processor.i"
 	@echo "... src/processor.s"
-	@echo "... src/screen.o"
-	@echo "... src/screen.i"
-	@echo "... src/screen.s"
 .PHONY : help
 
 

@@ -34,12 +34,12 @@ void OS::loadOSInfo(){
 QString OS::getDesktopEnvironmentFromSystem(){
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 
-    QString de = env.value("XDG_CURRENT_DESKTOP");
-    if (de.isEmpty()) {
-        de = env.value("DESKTOP_SESSION");
+    QString DesktopEnvironment = env.value("XDG_CURRENT_DESKTOP");
+    if (DesktopEnvironment.isEmpty()) {
+        DesktopEnvironment = env.value("DESKTOP_SESSION");
     }
 
-    return de.isEmpty() ? "unknown" : de;
+    return DesktopEnvironment.isEmpty() ? "unknown" : DesktopEnvironment;
 }
 
 QString OS::getUserNameFromSystem() {

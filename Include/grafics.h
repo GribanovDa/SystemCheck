@@ -1,27 +1,41 @@
 #ifndef GRAFICS_H
 #define GRAFICS_H
 
-#include <QString>
+#include "/home/mushroom/Проекты/C++/SystemCheck/Include/FileReader.h"
+#include <QMap>
+
+struct GpuInfo {
+    QString vendor;
+    QString model;
+    QString driver;
+    QString temperature;
+
+    QString summary() const {
+        return QString("%1 %2 (Driver: %3)")
+        .arg(vendor).arg(model).arg(driver);
+    }
+};
 
 class Grafics{
 
 private:
-    QString name;
-    QString energy; //sys/class/drm/card1/device/hwmon/hwmon2/power_input
-    QString temp; //sys/class/drm/card1/device/hwmon/hwmon2/temp1_input
-    QString cores;
-    QString threads;
+    QList<GpuInfo> gpuInfo;
+    QVector<QString> paths;
+    FileReader *fileReader;
+    QVector<QMap<QString, QString>> parsedFiles;
+
+    void refreshGraficsTemp();
+    void pathsInitialize();
+    QList<GpuInfo> getGpuInfoViaLshw();
+    QString deleteEverythingOutsideBrackets(QString text);
+
 
 public:
-    Processor();
+    Grafics();
 
-    QString getName() const { return name;}
-    QString getCash() const { return cash;}
-    QString getCores() const { return cores;}
-    QString getThreads() const { return threads;}
+    QList<GpuInfo> getGraficsInfo(){return gpuInfo;};
+    QString getTemperature(short numberOfCard);
 
-    QString getFreq();
-    QString getTemperature();
 
 };
 

@@ -19,20 +19,24 @@ void FileReader::refreshInfo(){
     }
 }
 
-void FileReader::fileReaderInitialization(QVector<QString>& paths){
+void FileReader::fileReaderInitialization(QVector<QString>& paths) {
+    for (int i = 0; i < paths.size(); ) {
+        std::ifstream file(paths[i].toStdString());
+        if (!file.is_open()) {
+            QString errorPath = paths[i];
+            mapKeyValue.insert(errorPath, "unknown");
+            parsedFiles.append(mapKeyValue);
+            paths.remove(i);
 
-
-    for(int i = 0; i < paths.length(); ++i){
-        std::ifstream path(paths[i].toStdString());
-        if (!path.is_open()) {
-            throw std::runtime_error("Не удалось открыть " + paths[i].toStdString());
+            throw std::runtime_error("Не удалось открыть " + errorPath.toStdString());
         }
 
-        keyValueInit(path);
+        keyValueInit(file);
         parsedFiles.append(mapKeyValue);
         mapKeyValue.clear();
+        file.close();
 
-        path.close();
+        i++;
     }
 }
 
@@ -64,15 +68,6 @@ void FileReader::parseInfoFromFileToMap(const std::string& line) {
     mapKeyValue[key] = value;
 }
 
-QString FileReader::readFirstLineFromFile(const QString& path) const{
-    std::ifstream file(path.toStdString());
-    if (!file.is_open()) {
-        throw std::runtime_error("Не удалось открыть файл: " + path.toStdString());
-    }
-    std::string line;
-    std::getline(file, line);
-    return QString::fromStdString(line).trimmed();
-}
 
 QVector<QMap<QString, QString>> FileReader::getRefreshedVectorOfParsedFiles() {
     refreshInfo();

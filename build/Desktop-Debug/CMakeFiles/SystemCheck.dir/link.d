@@ -6,13 +6,11 @@ SystemCheck: \
   CMakeFiles/SystemCheck.dir/main.cpp.o \
   CMakeFiles/SystemCheck.dir/mainwindow.cpp.o \
   CMakeFiles/SystemCheck.dir/src/processor.cpp.o \
-  CMakeFiles/SystemCheck.dir/src/battery.cpp.o \
   CMakeFiles/SystemCheck.dir/src/grafics.cpp.o \
   CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o \
   CMakeFiles/SystemCheck.dir/src/mem.cpp.o \
   CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o \
   CMakeFiles/SystemCheck.dir/src/operSys.cpp.o \
-  CMakeFiles/SystemCheck.dir/src/screen.cpp.o \
   CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o \
   /usr/lib64/libQt6Widgets.so.6.9.1 \
   /usr/lib64/libQt6Gui.so.6.9.1 \
@@ -94,8 +92,6 @@ CMakeFiles/SystemCheck.dir/mainwindow.cpp.o:
 
 CMakeFiles/SystemCheck.dir/src/processor.cpp.o:
 
-CMakeFiles/SystemCheck.dir/src/battery.cpp.o:
-
 CMakeFiles/SystemCheck.dir/src/grafics.cpp.o:
 
 CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o:
@@ -105,8 +101,6 @@ CMakeFiles/SystemCheck.dir/src/mem.cpp.o:
 CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o:
 
 CMakeFiles/SystemCheck.dir/src/operSys.cpp.o:
-
-CMakeFiles/SystemCheck.dir/src/screen.cpp.o:
 
 CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o:
 

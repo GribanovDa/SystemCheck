@@ -419,12 +419,6 @@
 			null
 		],
 		[
-			"/home/mushroom/\u041f\u0440\u043e\u0435\u043a\u0442\u044b/C++/SystemCheck/Include/battery.h",
-			"MU",
-			"GEFNOUJTFM/moc_battery.cpp",
-			null
-		],
-		[
 			"/home/mushroom/\u041f\u0440\u043e\u0435\u043a\u0442\u044b/C++/SystemCheck/Include/grafics.h",
 			"MU",
 			"GEFNOUJTFM/moc_grafics.cpp",
@@ -458,12 +452,6 @@
 			"/home/mushroom/\u041f\u0440\u043e\u0435\u043a\u0442\u044b/C++/SystemCheck/Include/processor.h",
 			"MU",
 			"GEFNOUJTFM/moc_processor.cpp",
-			null
-		],
-		[
-			"/home/mushroom/\u041f\u0440\u043e\u0435\u043a\u0442\u044b/C++/SystemCheck/Include/screen.h",
-			"MU",
-			"GEFNOUJTFM/moc_screen.cpp",
 			null
 		],
 		[
@@ -558,11 +546,6 @@
 			null
 		],
 		[
-			"/home/mushroom/\u041f\u0440\u043e\u0435\u043a\u0442\u044b/C++/SystemCheck/src/battery.cpp",
-			"MU",
-			null
-		],
-		[
 			"/home/mushroom/\u041f\u0440\u043e\u0435\u043a\u0442\u044b/C++/SystemCheck/src/grafics.cpp",
 			"MU",
 			null
@@ -589,11 +572,6 @@
 		],
 		[
 			"/home/mushroom/\u041f\u0440\u043e\u0435\u043a\u0442\u044b/C++/SystemCheck/src/processor.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/mushroom/\u041f\u0440\u043e\u0435\u043a\u0442\u044b/C++/SystemCheck/src/screen.cpp",
 			"MU",
 			null
 		]

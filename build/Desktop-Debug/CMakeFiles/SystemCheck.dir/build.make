@@ -135,24 +135,10 @@ CMakeFiles/SystemCheck.dir/src/processor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SystemCheck.dir/src/processor.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mushroom/Проекты/C++/SystemCheck/src/processor.cpp -o CMakeFiles/SystemCheck.dir/src/processor.cpp.s
 
-CMakeFiles/SystemCheck.dir/src/battery.cpp.o: CMakeFiles/SystemCheck.dir/flags.make
-CMakeFiles/SystemCheck.dir/src/battery.cpp.o: /home/mushroom/Проекты/C++/SystemCheck/src/battery.cpp
-CMakeFiles/SystemCheck.dir/src/battery.cpp.o: CMakeFiles/SystemCheck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SystemCheck.dir/src/battery.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SystemCheck.dir/src/battery.cpp.o -MF CMakeFiles/SystemCheck.dir/src/battery.cpp.o.d -o CMakeFiles/SystemCheck.dir/src/battery.cpp.o -c /home/mushroom/Проекты/C++/SystemCheck/src/battery.cpp
-
-CMakeFiles/SystemCheck.dir/src/battery.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SystemCheck.dir/src/battery.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mushroom/Проекты/C++/SystemCheck/src/battery.cpp > CMakeFiles/SystemCheck.dir/src/battery.cpp.i
-
-CMakeFiles/SystemCheck.dir/src/battery.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SystemCheck.dir/src/battery.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mushroom/Проекты/C++/SystemCheck/src/battery.cpp -o CMakeFiles/SystemCheck.dir/src/battery.cpp.s
-
 CMakeFiles/SystemCheck.dir/src/grafics.cpp.o: CMakeFiles/SystemCheck.dir/flags.make
 CMakeFiles/SystemCheck.dir/src/grafics.cpp.o: /home/mushroom/Проекты/C++/SystemCheck/src/grafics.cpp
 CMakeFiles/SystemCheck.dir/src/grafics.cpp.o: CMakeFiles/SystemCheck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SystemCheck.dir/src/grafics.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SystemCheck.dir/src/grafics.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SystemCheck.dir/src/grafics.cpp.o -MF CMakeFiles/SystemCheck.dir/src/grafics.cpp.o.d -o CMakeFiles/SystemCheck.dir/src/grafics.cpp.o -c /home/mushroom/Проекты/C++/SystemCheck/src/grafics.cpp
 
 CMakeFiles/SystemCheck.dir/src/grafics.cpp.i: cmake_force
@@ -166,7 +152,7 @@ CMakeFiles/SystemCheck.dir/src/grafics.cpp.s: cmake_force
 CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o: CMakeFiles/SystemCheck.dir/flags.make
 CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o: /home/mushroom/Проекты/C++/SystemCheck/src/harddisk.cpp
 CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o: CMakeFiles/SystemCheck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o -MF CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o.d -o CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o -c /home/mushroom/Проекты/C++/SystemCheck/src/harddisk.cpp
 
 CMakeFiles/SystemCheck.dir/src/harddisk.cpp.i: cmake_force
@@ -180,7 +166,7 @@ CMakeFiles/SystemCheck.dir/src/harddisk.cpp.s: cmake_force
 CMakeFiles/SystemCheck.dir/src/mem.cpp.o: CMakeFiles/SystemCheck.dir/flags.make
 CMakeFiles/SystemCheck.dir/src/mem.cpp.o: /home/mushroom/Проекты/C++/SystemCheck/src/mem.cpp
 CMakeFiles/SystemCheck.dir/src/mem.cpp.o: CMakeFiles/SystemCheck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SystemCheck.dir/src/mem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SystemCheck.dir/src/mem.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SystemCheck.dir/src/mem.cpp.o -MF CMakeFiles/SystemCheck.dir/src/mem.cpp.o.d -o CMakeFiles/SystemCheck.dir/src/mem.cpp.o -c /home/mushroom/Проекты/C++/SystemCheck/src/mem.cpp
 
 CMakeFiles/SystemCheck.dir/src/mem.cpp.i: cmake_force
@@ -194,7 +180,7 @@ CMakeFiles/SystemCheck.dir/src/mem.cpp.s: cmake_force
 CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o: CMakeFiles/SystemCheck.dir/flags.make
 CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o: /home/mushroom/Проекты/C++/SystemCheck/src/motherboard.cpp
 CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o: CMakeFiles/SystemCheck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o -MF CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o.d -o CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o -c /home/mushroom/Проекты/C++/SystemCheck/src/motherboard.cpp
 
 CMakeFiles/SystemCheck.dir/src/motherboard.cpp.i: cmake_force
@@ -208,7 +194,7 @@ CMakeFiles/SystemCheck.dir/src/motherboard.cpp.s: cmake_force
 CMakeFiles/SystemCheck.dir/src/operSys.cpp.o: CMakeFiles/SystemCheck.dir/flags.make
 CMakeFiles/SystemCheck.dir/src/operSys.cpp.o: /home/mushroom/Проекты/C++/SystemCheck/src/operSys.cpp
 CMakeFiles/SystemCheck.dir/src/operSys.cpp.o: CMakeFiles/SystemCheck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SystemCheck.dir/src/operSys.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SystemCheck.dir/src/operSys.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SystemCheck.dir/src/operSys.cpp.o -MF CMakeFiles/SystemCheck.dir/src/operSys.cpp.o.d -o CMakeFiles/SystemCheck.dir/src/operSys.cpp.o -c /home/mushroom/Проекты/C++/SystemCheck/src/operSys.cpp
 
 CMakeFiles/SystemCheck.dir/src/operSys.cpp.i: cmake_force
@@ -219,24 +205,10 @@ CMakeFiles/SystemCheck.dir/src/operSys.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SystemCheck.dir/src/operSys.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mushroom/Проекты/C++/SystemCheck/src/operSys.cpp -o CMakeFiles/SystemCheck.dir/src/operSys.cpp.s
 
-CMakeFiles/SystemCheck.dir/src/screen.cpp.o: CMakeFiles/SystemCheck.dir/flags.make
-CMakeFiles/SystemCheck.dir/src/screen.cpp.o: /home/mushroom/Проекты/C++/SystemCheck/src/screen.cpp
-CMakeFiles/SystemCheck.dir/src/screen.cpp.o: CMakeFiles/SystemCheck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SystemCheck.dir/src/screen.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SystemCheck.dir/src/screen.cpp.o -MF CMakeFiles/SystemCheck.dir/src/screen.cpp.o.d -o CMakeFiles/SystemCheck.dir/src/screen.cpp.o -c /home/mushroom/Проекты/C++/SystemCheck/src/screen.cpp
-
-CMakeFiles/SystemCheck.dir/src/screen.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SystemCheck.dir/src/screen.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mushroom/Проекты/C++/SystemCheck/src/screen.cpp > CMakeFiles/SystemCheck.dir/src/screen.cpp.i
-
-CMakeFiles/SystemCheck.dir/src/screen.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SystemCheck.dir/src/screen.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mushroom/Проекты/C++/SystemCheck/src/screen.cpp -o CMakeFiles/SystemCheck.dir/src/screen.cpp.s
-
 CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o: CMakeFiles/SystemCheck.dir/flags.make
 CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o: /home/mushroom/Проекты/C++/SystemCheck/src/FileReader.cpp
 CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o: CMakeFiles/SystemCheck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o -MF CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o.d -o CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o -c /home/mushroom/Проекты/C++/SystemCheck/src/FileReader.cpp
 
 CMakeFiles/SystemCheck.dir/src/FileReader.cpp.i: cmake_force
@@ -253,13 +225,11 @@ SystemCheck_OBJECTS = \
 "CMakeFiles/SystemCheck.dir/main.cpp.o" \
 "CMakeFiles/SystemCheck.dir/mainwindow.cpp.o" \
 "CMakeFiles/SystemCheck.dir/src/processor.cpp.o" \
-"CMakeFiles/SystemCheck.dir/src/battery.cpp.o" \
 "CMakeFiles/SystemCheck.dir/src/grafics.cpp.o" \
 "CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o" \
 "CMakeFiles/SystemCheck.dir/src/mem.cpp.o" \
 "CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o" \
 "CMakeFiles/SystemCheck.dir/src/operSys.cpp.o" \
-"CMakeFiles/SystemCheck.dir/src/screen.cpp.o" \
 "CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o"
 
 # External object files for target SystemCheck
@@ -269,13 +239,11 @@ SystemCheck: CMakeFiles/SystemCheck.dir/SystemCheck_autogen/mocs_compilation.cpp
 SystemCheck: CMakeFiles/SystemCheck.dir/main.cpp.o
 SystemCheck: CMakeFiles/SystemCheck.dir/mainwindow.cpp.o
 SystemCheck: CMakeFiles/SystemCheck.dir/src/processor.cpp.o
-SystemCheck: CMakeFiles/SystemCheck.dir/src/battery.cpp.o
 SystemCheck: CMakeFiles/SystemCheck.dir/src/grafics.cpp.o
 SystemCheck: CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o
 SystemCheck: CMakeFiles/SystemCheck.dir/src/mem.cpp.o
 SystemCheck: CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o
 SystemCheck: CMakeFiles/SystemCheck.dir/src/operSys.cpp.o
-SystemCheck: CMakeFiles/SystemCheck.dir/src/screen.cpp.o
 SystemCheck: CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o
 SystemCheck: CMakeFiles/SystemCheck.dir/build.make
 SystemCheck: CMakeFiles/SystemCheck.dir/compiler_depend.ts
@@ -285,7 +253,7 @@ SystemCheck: /usr/lib64/libGLX.so
 SystemCheck: /usr/lib64/libOpenGL.so
 SystemCheck: /usr/lib64/libQt6Core.so.6.9.1
 SystemCheck: CMakeFiles/SystemCheck.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable SystemCheck"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mushroom/Проекты/C++/SystemCheck/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable SystemCheck"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SystemCheck.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

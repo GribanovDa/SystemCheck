@@ -13,14 +13,12 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mushroom/Проекты/C++/SystemCheck/main.cpp" "CMakeFiles/SystemCheck.dir/main.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/main.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/mainwindow.cpp" "CMakeFiles/SystemCheck.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/mainwindow.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/src/FileReader.cpp" "CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/FileReader.cpp.o.d"
-  "/home/mushroom/Проекты/C++/SystemCheck/src/battery.cpp" "CMakeFiles/SystemCheck.dir/src/battery.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/battery.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/src/grafics.cpp" "CMakeFiles/SystemCheck.dir/src/grafics.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/grafics.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/src/harddisk.cpp" "CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/harddisk.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/src/mem.cpp" "CMakeFiles/SystemCheck.dir/src/mem.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/mem.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/src/motherboard.cpp" "CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/motherboard.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/src/operSys.cpp" "CMakeFiles/SystemCheck.dir/src/operSys.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/operSys.cpp.o.d"
   "/home/mushroom/Проекты/C++/SystemCheck/src/processor.cpp" "CMakeFiles/SystemCheck.dir/src/processor.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/processor.cpp.o.d"
-  "/home/mushroom/Проекты/C++/SystemCheck/src/screen.cpp" "CMakeFiles/SystemCheck.dir/src/screen.cpp.o" "gcc" "CMakeFiles/SystemCheck.dir/src/screen.cpp.o.d"
   "" "SystemCheck" "gcc" "CMakeFiles/SystemCheck.dir/link.d"
   )
 

@@ -25,20 +25,20 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         Include/processor.h
         src/processor.cpp
-        Include/battery.h
+
         Include/grafics.h
         Include/harddisk.h
         Include/mem.h
         Include/motherboard.h
         Include/operSys.h
-        Include/screen.h
-        src/battery.cpp
+
+
         src/grafics.cpp
         src/harddisk.cpp
         src/mem.cpp
         src/motherboard.cpp
         src/operSys.cpp
-        src/screen.cpp
+
         mainwindow.h mainwindow.cpp mainwindow.ui
         Include/FileReader.h
         src/FileReader.cpp

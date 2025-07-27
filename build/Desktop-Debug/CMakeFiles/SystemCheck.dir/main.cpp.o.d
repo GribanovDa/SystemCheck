@@ -348,6 +348,7 @@ CMakeFiles/SystemCheck.dir/main.cpp.o: \
  /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
  /home/mushroom/Проекты/C++/SystemCheck/Include/mem.h \
  /home/mushroom/Проекты/C++/SystemCheck/Include/operSys.h \
+ /home/mushroom/Проекты/C++/SystemCheck/Include/grafics.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h /usr/include/qt6/QtCore/QTimer \
